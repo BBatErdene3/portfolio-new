@@ -135,7 +135,7 @@ onMounted(() => {
   } catch(e) {
     console.log('Theme тохируулахад алдаа гарлаа', e)
   }
-})
+})    
 
 const toggleTheme = () => {
   isDark.value = !isDark.value
@@ -166,3 +166,6 @@ html, body {
   transition: background-color .35s ease, color .35s ease;
 }
 </style>
+
+
+
