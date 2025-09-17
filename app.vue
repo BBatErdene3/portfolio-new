@@ -142,22 +142,4 @@ const toggleTheme = () => {
 }
 </script>
 
-<style>
-@layer utilities {
-  @keyframes fadeIn { 
-    0% { opacity: 0; transform: translateY(20px); }
-    100% { opacity: 1; transform: translateY(0); }
-  }
-  .animate-fadeIn {
-    animation: fadeIn 1s ease-out forwards;
-  }
-  .delay-500 {
-    animation-delay: 0.5s;
-  }
-}
 
-/* Smooth color transition for the whole page */
-html, body {
-  transition: background-color .35s ease, color .35s ease;
-}
-</style>
