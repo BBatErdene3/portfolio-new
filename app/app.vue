@@ -1,7 +1,8 @@
 <template>
-  <div class="transition-colors duration-500 bg-white dark:bg-gray-900 dark:text-gray-200 min-h-screen">
+  <div :class="['transition-colors duration-500 min-h-screen', isDark ? 'dark bg-gray-900 text-gray-200' : 'bg-white text-gray-900']">
+
     <!-- Header -->
-    <header class="bg-gradient-to-r from-purple-600 via-pink-500 to-red-500 shadow-lg fixed w-full z-50">
+    <header class="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-700 shadow-lg fixed w-full z-50">
       <div class="container mx-auto flex justify-between items-center p-6">
         <a class="text-white font-bold text-4xl">Бат-Эрдэнэ</a>
 
@@ -14,7 +15,7 @@
         </nav>
 
         <div class="flex items-center space-x-4">
-          <!-- Theme solih -->
+          <!-- Theme toggle -->
           <button 
             @click="toggleTheme"
             :aria-pressed="isDark"
@@ -33,29 +34,30 @@
       </div>
     </header>
 
-    <!-- Content -->
+    <!-- Main -->
     <main class="pt-24">
-      <!-- Hero Section -->
-      <section id="home" class="h-screen flex flex-col justify-center items-center text-center bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400">
-        <h1 class="text-8xl font-extrabold mb-4 opacity-0 animate-fadeIn">Сайн уу, би Бат-Эрдэнэ 👋</h1>
-        <p class="text-4xl text-white mb-6 opacity-0 animate-fadeIn delay-500">Ирээдүйн IT инженер | Вэб хөгжүүлэгч</p>
-        <a href="#projects" class="bg-purple-600 text-white px-6 py-3 rounded-lg shadow-lg hover:bg-purple-700 transition duration-300 animate-pulse">
+
+      <!-- Hero -->
+      <section id="home" class="h-screen flex flex-col justify-center items-center text-center bg-gradient-to-r from-blue-500 via-purple-600 to-blue-700">
+        <h1 class="text-7xl md:text-8xl font-extrabold mb-4 opacity-0 animate-fadeIn">Сайн уу, би Бат-Эрдэнэ 👋</h1>
+        <p class="text-2xl md:text-4xl text-white mb-6 opacity-0 animate-fadeIn delay-500">Ирээдүйн IT инженер | Вэб хөгжүүлэгч</p>
+        <a href="#projects" class="bg-purple-600 text-white px-6 py-3 rounded-lg shadow-lg hover:bg-purple-700 transform hover:scale-105 transition duration-300 animate-pulse">
           Миний ажлууд
         </a>
       </section>
 
       <!-- About -->
-      <section id="about" class="py-20 text-center bg-purple-100 dark:bg-gray-800">
-        <div class="container mx-auto">
+      <section id="about" class="py-20 text-center bg-gradient-to-r from-blue-100 via-purple-200 to-blue-300 dark:bg-gray-800">
+        <div class="container mx-auto max-w-3xl">
           <h2 class="text-4xl font-bold mb-6">Миний тухай</h2>
-          <p class="text-gray-700 dark:text-gray-300 max-w-2xl mx-auto leading-relaxed">
+          <p class="text-gray-700 dark:text-gray-300 leading-relaxed text-lg">
             Намайг Б. Бат-Эрдэнэ гэдэг. Би мэдээллийн технологийн салбарт сонирхолтой ба ирээдүйд IT инженер болох зорилготой.
           </p>
         </div>
       </section>
 
       <!-- Skills -->
-      <section id="skills" class="py-20 text-center bg-purple-200 dark:bg-gray-700">
+      <section id="skills" class="py-20 text-center bg-gradient-to-r from-blue-200 via-purple-300 to-blue-400 dark:bg-gray-700">
         <div class="container mx-auto">
           <h2 class="text-4xl font-bold mb-10">Миний ур чадвар</h2>
           <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
@@ -68,19 +70,19 @@
       </section>
 
       <!-- Projects -->
-      <section id="projects" class="py-20 text-center bg-purple-300 dark:bg-gray-800">
-        <div class="container mx-auto">
+      <section id="projects" class="py-20 text-center bg-gradient-to-r from-blue-300 via-purple-400 to-blue-500 dark:bg-gray-800">
+        <div class="container mx-auto max-w-6xl">
           <h2 class="text-4xl font-bold mb-10">Миний төслүүд</h2>
           <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="bg-gray-100 dark:bg-gray-900 shadow-lg rounded-lg p-6 transform transition duration-500 hover:scale-105 hover:shadow-2xl">
+            <div class="bg-white dark:bg-gray-900 shadow-lg rounded-lg p-6 transform transition duration-500 hover:scale-105 hover:shadow-2xl">
               <h3 class="font-bold mb-2">Portfolio Web</h3>
               <p class="text-gray-600 dark:text-gray-300">Vue + TailwindCSS ашиглан бүтээж буй хувийн вебсайт.</p>
             </div>
-            <div class="bg-gray-100 dark:bg-gray-900 shadow-lg rounded-lg p-6 transform transition duration-500 hover:scale-105 hover:shadow-2xl">
+            <div class="bg-white dark:bg-gray-900 shadow-lg rounded-lg p-6 transform transition duration-500 hover:scale-105 hover:shadow-2xl">
               <h3 class="font-bold mb-2">Unity</h3>
               <p class="text-gray-600 dark:text-gray-300">Unity ашиглан бүтээсэн AR тоглоом.</p>
             </div>
-            <div class="bg-gray-100 dark:bg-gray-900 shadow-lg rounded-lg p-6 transform transition duration-500 hover:scale-105 hover:shadow-2xl">
+            <div class="bg-white dark:bg-gray-900 shadow-lg rounded-lg p-6 transform transition duration-500 hover:scale-105 hover:shadow-2xl">
               <h3 class="font-bold mb-2">Шинэ төслүүд</h3>
               <p class="text-gray-600 dark:text-gray-300">Тун удахгүй нэмэгдэнэ...</p>
             </div>
@@ -89,27 +91,26 @@
       </section>
 
       <!-- Contact -->
-      <section id="contact" class="py-20 text-center bg-purple-400 dark:bg-gray-700">
+      <section id="contact" class="py-20 text-center bg-gradient-to-r from-blue-400 via-purple-500 to-blue-600 dark:bg-gray-700">
         <div class="container mx-auto">
           <h2 class="text-4xl font-bold mb-6">Холбоо барих</h2>
           <p class="text-gray-700 dark:text-gray-300 mb-10">Надтай хамтран ажиллахыг хүсвэл холбогдоорой!</p>
-
-          <a href="mailto:youremail@example.com"
-             class="bg-purple-600 text-white px-6 py-3 rounded-lg shadow-lg hover:bg-purple-700 transition duration-300 mr-4 animate-pulse">
-            📧 Имэйл бичих
-          </a>
-
-          <a href="/resume.pdf" download
-             class="bg-white text-purple-600 px-6 py-3 rounded-lg shadow-lg hover:bg-purple-100 transition duration-300 animate-pulse">
-            📄 CV татах
-          </a>
+          <div class="flex justify-center flex-wrap gap-4">
+            <a href="mailto:youremail@example.com" class="bg-purple-600 text-white px-6 py-3 rounded-lg shadow-lg hover:bg-purple-700 transform hover:scale-105 transition duration-300 animate-pulse">
+              📧 Имэйл бичих
+            </a>
+            <a href="/resume.pdf" download class="bg-white text-purple-600 px-6 py-3 rounded-lg shadow-lg hover:bg-purple-100 transform hover:scale-105 transition duration-300 animate-pulse">
+              📄 CV татах
+            </a>
+          </div>
         </div>
       </section>
 
       <!-- Footer -->
-      <footer class="bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-white py-6 text-center">
+      <footer class="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-700 text-white py-6 text-center">
         <p>© 2025 Бат-Эрдэнэ. Бүх эрх хуулиар хамгаалагдсан.</p>
       </footer>
+
     </main>
   </div>
 </template>
@@ -120,32 +121,26 @@ import { ref, onMounted } from 'vue'
 const isDark = ref(false)
 
 onMounted(() => {
-  try {
+  if (typeof window !== 'undefined') {
     const savedTheme = localStorage.getItem('theme')
-    if (savedTheme) {
-      isDark.value = savedTheme === 'dark'
-    } else {
+    if (savedTheme) isDark.value = savedTheme === 'dark'
+    else {
       const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
       isDark.value = prefersDark
       localStorage.setItem('theme', prefersDark ? 'dark' : 'light')
     }
-
-    // Browser-д л document ашиглана
     document.documentElement.classList.toggle('dark', isDark.value)
-  } catch(e) {
-    console.log('Theme тохируулахад алдаа гарлаа', e)
   }
-})    
+})
 
 const toggleTheme = () => {
   isDark.value = !isDark.value
-  document.documentElement.classList.toggle('dark', isDark.value)
-  try {
+  if (typeof window !== 'undefined') {
+    document.documentElement.classList.toggle('dark', isDark.value)
     localStorage.setItem('theme', isDark.value ? 'dark' : 'light')
-  } catch(e) {}
+  }
 }
 </script>
-
 
 <style>
 @layer utilities {
@@ -166,6 +161,3 @@ html, body {
   transition: background-color .35s ease, color .35s ease;
 }
 </style>
-
-
-
