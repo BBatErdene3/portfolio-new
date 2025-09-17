@@ -50,7 +50,7 @@
       <section id="about" class="py-20 text-center bg-gradient-to-r from-blue-100 via-purple-200 to-blue-300 dark:bg-gray-800">
         <div class="container mx-auto max-w-3xl">
           <h2 class="text-4xl font-bold mb-6">Миний тухай</h2>
-          <p class="text-gray-700 dark:text-gray-300 leading-relaxed text-lg">
+          <p class="text-black-700 dark:text-black-300 leading-relaxed text-lg">
             Намайг Б. Бат-Эрдэнэ гэдэг. Би мэдээллийн технологийн салбарт сонирхолтой ба ирээдүйд IT инженер болох зорилготой.
           </p>
         </div>
