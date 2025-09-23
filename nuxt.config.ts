@@ -1,5 +1,17 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import { defineNuxtConfig } from 'nuxt/config';
+
 export default defineNuxtConfig({
+  runtimeConfig: {
+    // Server-side environment variables
+    smtpHost: process.env.SMTP_HOST,
+    smtpPort: process.env.SMTP_PORT,
+    smtpUser: process.env.SMTP_USER,
+    smtpPass: process.env.SMTP_PASS,
+    recipientEmail: process.env.RECIPIENT_EMAIL,
+  },
+  
+
   app: {
     head: {
       title: 'Бат-Эрдэнэ - Portfolio',
@@ -18,11 +30,24 @@ export default defineNuxtConfig({
     },
   },
   css: ['~/assets/css/main.css'],
-  build: {
-    transpile: ['vue']
+  ssr: false,
+  experimental: {
+    payloadExtraction: false
   },
-  compatibilityDate: '2025-09-17'
+  typescript: {
+    strict: true
+  },
+  nitro: {
+    compressPublicAssets: true,
+    compatibilityDate: '2025-09-23'
+  },
+  components: {
+    global: true,
+    dirs: ['~/components']
+  }
 })
+
+
 
 
 
