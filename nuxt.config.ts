@@ -49,13 +49,13 @@ export default defineNuxtConfig({
     host: '127.0.0.1',
     port: 3000
   },
+  devtools: { enabled: false },
   vite: {
     server: {
-      hmr: {
-        host: '127.0.0.1',
-        port: 3000,
-        clientPort: 3000,
-        protocol: 'ws'
+      hmr: false,
+      watch: {
+        usePolling: true,
+        interval: 1000
       }
     }
   }
