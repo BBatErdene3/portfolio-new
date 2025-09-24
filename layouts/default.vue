@@ -1,4 +1,4 @@
-<![CDATA[<template>
+<template>
   <div :class="['transition-colors duration-500 min-h-screen', isDark ? 'dark bg-gray-900 text-gray-200' : 'bg-white text-gray-900']">
     <!-- Header -->
     <header class="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-700 shadow-lg fixed w-full z-50">
@@ -70,4 +70,4 @@ const toggleTheme = () => {
     localStorage.setItem('theme', isDark.value ? 'dark' : 'light')
   }
 }
-</script>]]>
+</script>

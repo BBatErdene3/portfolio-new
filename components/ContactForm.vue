@@ -51,9 +51,9 @@ const status = ref("")
 
 const sendMail = async () => {
   try {
-    const res = await $fetch("/api/send-email", {
+    const res = await $fetch("/api/sendmail", {
       method: "POST",
-      body: form.value,
+      body: { name: form.value.name, email: form.value.email, message: form.value.message },
     })
     if (res.success) {
       status.value = "Амжилттай илгээгдлээ!"

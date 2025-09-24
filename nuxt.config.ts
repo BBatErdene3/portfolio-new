@@ -44,6 +44,20 @@ export default defineNuxtConfig({
   components: {
     global: true,
     dirs: ['~/components']
+  },
+  devServer: {
+    host: '127.0.0.1',
+    port: 3000
+  },
+  vite: {
+    server: {
+      hmr: {
+        host: '127.0.0.1',
+        port: 3000,
+        clientPort: 3000,
+        protocol: 'ws'
+      }
+    }
   }
 })
 
