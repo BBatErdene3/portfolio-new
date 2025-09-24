@@ -16,8 +16,8 @@ export default defineEventHandler(async (event) => {
     }
 
     const msg = {
-      to: 'bbtrdene@yahoo.com',
-      from: 'baterdeneb186@gmail.com', // must be a verified sender in SendGrid
+      to: to,
+      from: from, // must be a verified sender in SendGrid
       replyTo: email,
       subject: `New Contact from ${name}`,
       text: message,
