@@ -8,8 +8,8 @@ export default defineEventHandler(async (event) => {
   try {
     const { name, email, message } = await readBody<{ name: string; email: string; message: string }>(event)
 
-    const to = process.env.CONTACT_TO || process.env.MY_EMAIL
-    const from = process.env.CONTACT_FROM || process.env.MY_EMAIL
+    const to = process.env.CONTACT_TO || process.env.SENDER_EMAI
+    const from = process.env.CONTACT_FROM || process.env.RECIPIENT_EMAIL
 
     if (!process.env.SENDGRID_API_KEY || !to || !from) {
       return { success: false, message: 'Missing email configuration' }
